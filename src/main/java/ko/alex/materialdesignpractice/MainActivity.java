@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // back button enabled
+
     }
 
 
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Biohazard selected",Toast.LENGTH_SHORT).show();
         } else if(id==R.id.qrcodescan){
             Toast.makeText(this,"QR code scan selected",Toast.LENGTH_SHORT).show();
+        } else if(id==android.R.id.home){ // left arrow is R.id.home by default
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
